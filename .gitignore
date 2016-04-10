@@ -1,0 +1,5 @@
+# html swap files
+*.swp
+
+# python
+*.pyc
