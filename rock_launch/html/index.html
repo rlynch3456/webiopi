@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.o$
+<html>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Launch Rocket</title>
+        <script type="text/javascript" src="/webiopi.js"></script>
+        <script type="text/javascript">
+        webiopi().ready(function() {
+                // Create a "Launch" labeled button for GPIO 17
+                var button = webiopi().createGPIOButton(17, "Launch GPIO 17");
+ 
+                // Append button to HTML element with ID="controls" using jQuery
+                $("#controls").append(button);
+ 
+                // Refresh GPIO buttons
+                // pass true to refresh repeatedly of false to refresh once
+                webiopi().refreshGPIO(true);
+        });
+ </script>
+        <style type="text/css">
+                button {
+                        display: block;
+                        margin: 5px 5px 5px 5px;
+                        width: 600px;
+                        height: 400px;
+                        font-size: 48pt;
+                        font-weight: bold;
+                        color: white;
+                        border-radius: 20px
+                        
+ }
+ 
+                #gpio17.HIGH {
+                        background-color: Red;
+                }
+ 
+                #gpio17.LOW {
+                        background-color: Green;
+                }
+        </style>
+</head>
+<body>
+<h1 align="center">Rocket Launcher</h1><hr>
+        <div id="controls" align="center"></div>
+</body>
+</html>
